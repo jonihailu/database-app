@@ -36,6 +36,19 @@
                             <artifactId>mssql-jdbc</artifactId>
                         </sharedLibrary>
                     </sharedLibraries>
+                    <cloudHubDeployment>
+      
+				<uri>https://anypoint.mulesoft.com</uri>
+      <muleVersion>4.3.0</muleVersion>
+      <username>johnnymike2021</username>
+      
+      <password>Muluken62</password>
+      <applicationName>database-select-proj</applicationName>
+      <environment>Sandbox</environment>
+      <workers>1</workers>
+      <workerType>Micro</workerType>
+      <ObjectStoreV2>True</ObjectStoreV2>
+     </cloudHubDeployment>
                 </configuration>
 			</plugin>
 		</plugins>

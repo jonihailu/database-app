@@ -13,7 +13,7 @@ http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/
 		<db:mssql-connection host="localhost" port="1433" user="joni" password="123456" databaseName="ethiopia" />
 	</db:config>
 	<flow name="database-select-projFlow" doc:id="051702a3-18e2-4e58-939b-bfc697a72e40" >
-		<http:listener doc:name="Listener" doc:id="320077e3-183e-48d6-b8d5-0bfebb1cf213" config-ref="HTTP_Listener_config" path="/database"/>
+		<http:listener doc:name="Listener" doc:id="320077e3-183e-48d6-b8d5-0bfebb1cf213" config-ref="HTTP_Listener_config" path="/databases"/>
 		<db:select doc:name="Select" doc:id="424d733b-66fc-4896-ae6f-31b1cd157799" config-ref="Database_Config1">
 			<db:sql ><![CDATA[select * from mule1]]></db:sql>
 		</db:select>

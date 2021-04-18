@@ -9,15 +9,16 @@ http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/
 	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="84fb851a-3df9-4779-b107-6d20e5396dc6" >
 		<http:listener-connection host="0.0.0.0" port="8081" />
 	</http:listener-config>
-	<db:config name="Database_Config1" doc:name="Database Config" doc:id="f900bc25-8953-4945-960a-da17f35199b1" >
+	<db:config name="Database_Config" doc:name="Database Config" doc:id="e5e4fbaf-69e4-43c2-85b9-6461b8cf8f5f" >
 		<db:mssql-connection host="localhost" port="1433" user="joni" password="123456" databaseName="ethiopia" />
 	</db:config>
 	<flow name="database-select-projFlow" doc:id="051702a3-18e2-4e58-939b-bfc697a72e40" >
 		<http:listener doc:name="Listener" doc:id="320077e3-183e-48d6-b8d5-0bfebb1cf213" config-ref="HTTP_Listener_config" path="/database"/>
-		<db:select doc:name="Select" doc:id="424d733b-66fc-4896-ae6f-31b1cd157799" config-ref="Database_Config1">
+		<logger level="INFO" doc:name="Logger" doc:id="2bfed1b5-0c56-4c3b-8cec-646891ab2360" message="#[payload]"/>
+		<db:select doc:name="Select" doc:id="424d733b-66fc-4896-ae6f-31b1cd157799" config-ref="Database_Config">
 			<db:sql ><![CDATA[select * from mule1]]></db:sql>
 		</db:select>
-		<ee:transform doc:name="Transform Message" doc:id="46111a20-6721-44e6-b489-b027332630ee" >
+		<ee:transform doc:name="Transform Message" doc:id="80b41742-c3d3-4f43-8c7a-de6fedf833f3" >
 			<ee:message >
 				<ee:set-payload ><![CDATA[%dw 2.0
 output application/json
@@ -29,5 +30,6 @@ payload map ( payload01 , indexOfPayload01 ) -> {
 }]]></ee:set-payload>
 			</ee:message>
 		</ee:transform>
+		<logger level="INFO" doc:name="Logger" doc:id="4f6dff7b-d83b-4239-9f4c-eb6a29b08df2" message="#[payload]"/>
 	</flow>
 </mule>

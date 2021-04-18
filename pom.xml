@@ -37,18 +37,16 @@
                         </sharedLibrary>
                     </sharedLibraries>
                     <cloudHubDeployment>
-      
-				<uri>https://anypoint.mulesoft.com</uri>
-      <muleVersion>4.3.0</muleVersion>
-      <username>johnnymike2021</username>
-      
-      <password>Muluken62</password>
-      <applicationName>database-select-proj</applicationName>
-      <environment>Sandbox</environment>
-      <workers>1</workers>
-      <workerType>Micro</workerType>
-      <ObjectStoreV2>True</ObjectStoreV2>
-     </cloudHubDeployment>
+				      <uri>https://anypoint.mulesoft.com</uri>
+				     <muleVersion>${muleVersion}</muleVersion> 
+				      <username>${username}</username>
+				      <password>${password}</password>
+				      <applicationName>${applicationName}</applicationName>
+				      <environment>${environment}</environment>
+				      <workers>${workers}</workers>
+				      <workerType>${workerType}</workerType>
+				      <ObjectStoreV2>${ObjectStoreV2}</ObjectStoreV2>
+				      </cloudHubDeployment>
                 </configuration>
 			</plugin>
 		</plugins>

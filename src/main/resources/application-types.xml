@@ -9,7 +9,7 @@ type outputmetadeta = Array<{|  id: Number {"typeId": "int"},   Fname: String,  
 ]]></types:shape>
     </types:type>
   </types:catalog>
-  <types:enrichment select="#46111a20-6721-44e6-b489-b027332630ee">
+  <types:enrichment select="#80b41742-c3d3-4f43-8c7a-de6fedf833f3">
     <types:processor-declaration>
       <types:output-event>
         <types:message>
